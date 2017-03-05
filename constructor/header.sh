@@ -410,8 +410,8 @@ fi
 if [ "$BATCH" = "0" ]; then
     # Interactive mode.
 #if osx
-    BASH_RC="$HOME"/.bash_profile
-    DEFAULT=yes
+    BASH_RC=$HOME/.profile
+    DEFAULT=no
 #else
     BASH_RC="$HOME"/.bashrc
     DEFAULT=no
