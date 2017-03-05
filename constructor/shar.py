@@ -63,7 +63,7 @@ def get_header(tarball, info):
         'PLAT': info['_platform'],
         'DIST0': dist0,
         'DEFAULT_PREFIX': info.get('default_prefix',
-                                   '$HOME/%s' % name.lower()),
+                                   '$HOME/%s' % name.upper()),
         'MD5': md5_file(tarball),
         'INSTALL_COMMANDS': '\n'.join(install_lines),
         'pycache': '__pycache__',
