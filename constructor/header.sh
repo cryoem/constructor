@@ -312,7 +312,7 @@ to PATH in your $BASH_RC ? [yes|no]
         echo "
 You may wish to edit your .bashrc or prepend the __NAME__ install location:
 
-$ export PATH=$PREFIX/bin:\$PATH; export PYTHONPATH=$PREFIX/lib:\$PYTHONPATH
+$ export PATH=$PREFIX/bin:\$PATH; export PYTHONPATH=$PREFIX/lib:\$PYTHONPATH; export EMAN2DIR=$PREFIX
 "
     else
         if [ -f $BASH_RC ]; then
@@ -331,7 +331,7 @@ For this change to become active, you have to open a new terminal.
 "
         echo "
 # added by __NAME__ installer
-export PATH=\"$PREFIX/bin:\$PATH\"; export PYTHONPATH=\"$PREFIX/lib:\$PYTHONPATH\"" >>$BASH_RC
+export PATH=\"$PREFIX/bin:\$PATH\"; export PYTHONPATH=\"$PREFIX/lib:\$PYTHONPATH\"; export EMAN2DIR=\"$PREFIX\"" >>$BASH_RC
     fi
 
     echo "Thank you for installing __NAME__!"
