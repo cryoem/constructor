@@ -293,7 +293,7 @@ if [[ $BATCH == 0 ]] # interactive mode
 then
 #if osx
     BASH_RC=$HOME/.profile
-    DEFAULT=yes
+    DEFAULT=no
 #else
     BASH_RC=$HOME/.bashrc
     DEFAULT=no
