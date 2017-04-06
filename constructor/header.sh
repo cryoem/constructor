@@ -335,7 +335,7 @@ export PATH=\"$PREFIX/bin:\$PATH\"" >>$BASH_RC
     fi
 
     echo "Thank you for installing __NAME__!"
-    cluster_message=$(cat <<EOF 
+    cat <<EOF 
 
 INSTALLATION IS NOW COMPLETE
 
@@ -347,8 +347,6 @@ If you are using EMAN2/SPARX/SPHIRE on a cluster, the version of OpenMPI we prov
 - run 'utils/install_pydusa.sh' to rebuild Pydusa using the system installed OpenMPI
 
 EOF
-)
-    echo $cluster_message
 
 fi # !BATCH
 
