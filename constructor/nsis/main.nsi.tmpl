@@ -610,14 +610,6 @@ Function OnDirectoryLeave
 
     NoSpaces:
 
-    UnicodePathTest::SpecialCharPathTest $INSTDIR
-    Pop $R1
-    StrCmp $R1 "nothingspecial" nothing_special_path
-        messagebox mb_ok|MB_ICONEXCLAMATION \
-            "Error: 'Destination Folder' contains the following invalid character$R1"
-        abort
-    nothing_special_path:
-
       ; test if path contains unicode characters
       UnicodePathTest::UnicodePathTest $INSTDIR
       Pop $R1
