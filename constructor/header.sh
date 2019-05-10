@@ -61,7 +61,6 @@ PREFIX=__DEFAULT_PREFIX__
 BATCH=0
 FORCE=0
 SKIP_SCRIPTS=0
-TEST=0
 REINSTALL=0
 USAGE="
 usage: $0 [options]
@@ -75,7 +74,6 @@ Installs __NAME__ __VERSION__
 -p PREFIX    install prefix, defaults to $PREFIX, must not contain spaces.
 -s           skip running pre/post-link/install scripts
 -u           update an existing installation
--t           run package tests after installation (may install conda-build)
 "
 
 if which getopt > /dev/null 2>&1; then
@@ -114,10 +112,6 @@ if which getopt > /dev/null 2>&1; then
                 FORCE=1
                 shift
                 ;;
-            -t)
-                TEST=1
-                shift
-                ;;
             --)
                 shift
                 break
@@ -129,7 +123,7 @@ if which getopt > /dev/null 2>&1; then
         esac
     done
 else
-    while getopts "bfhp:sut" x; do
+    while getopts "bfhp:su" x; do
         case "$x" in
             h)
                 printf "%s\\n" "$USAGE"
@@ -149,9 +143,6 @@ else
                 ;;
             u)
                 FORCE=1
-                ;;
-            t)
-                TEST=1
                 ;;
             ?)
                 printf "ERROR: did not recognize option '%s', please try -h\\n" "$x"
